@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_162645) do
+ActiveRecord::Schema.define(version: 2020_05_19_221558) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "unique_categoryname", unique: true
+    t.index ["priority"], name: "unique_categorypriority", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_162645) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "unique_username", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
