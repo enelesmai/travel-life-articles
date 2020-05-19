@@ -1,2 +1,24 @@
-# travel-life-articles
-Ruby on Rails capstone project based on travel articles website. Types of Travel Business Travel. Solo Travel. Travel With Friends. Family Travel. Travel With Group. Luxury Travel. Adventure Travel.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
