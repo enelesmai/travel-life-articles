@@ -6,5 +6,7 @@ class CreateVotes < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_foreign_key :votes, :users, column: :user_id
+    add_foreign_key :votes, :travels, column: :travel_id
   end
 end

@@ -6,5 +6,7 @@ class CreateTravelCategories < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_foreign_key :travel_categories, :travels, column: :travel_id
+    add_foreign_key :travel_categories, :categories, column: :category_id
   end
 end
