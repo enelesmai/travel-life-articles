@@ -5,4 +5,8 @@ class Travel < ApplicationRecord
     has_many :travel_categories
     has_many :categories, through: :travel_categories
     has_many :comments
+
+    def total_votes
+        votes.length
+    end
 end
