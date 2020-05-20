@@ -1,7 +1,7 @@
 <h1>Sign Up</h1>
 <%= form_for @user do |f| %>
     <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br><br>
 
     <%= f.submit "Log In", disable_with: 'Submiting...' %>
 <% end %>
