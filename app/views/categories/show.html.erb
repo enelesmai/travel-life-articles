@@ -1,0 +1,5 @@
+<h2>Traveling articles in <%= @category_name%> <h2>
+
+<% @travels_by_category.each do |item| %>
+    <span><%= item.title %></span>
+<% end %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'travels#index'
 
   resources :travels, only: [:new, :create, :show, :index]
+  resources :categories, only: [:new, :create, :show, :index]
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
