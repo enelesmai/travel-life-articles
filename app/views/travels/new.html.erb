@@ -1,0 +1,12 @@
+<h1>Create a new traveling article</h1>
+
+<%= form_for @event do |f| %>
+
+  <%= f.label :title, "Title:" %><br>
+  <%= f.text_area :title %><br><br>
+
+  <%= f.label :text, "Text:" %><br>
+  <%= f.text_area :text %><br><br>
+
+  <%= f.submit "Create Article", disable_with: 'Creating...' %>
+<% end %>
