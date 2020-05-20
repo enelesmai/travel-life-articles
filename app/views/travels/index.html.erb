@@ -1,3 +1,24 @@
-<h1>Traveling articles</h1>
-
-<p>Hello World!</p>
+<div class="portrait">
+    <% if @featured_traveling_article.nil? %>
+        <h2>There is no articles</h2>
+    <% else %>
+        <h2><%= @featured_traveling_article.title%></h2>
+    <% end %>
+</div>
+<div class="feautured_container">
+    <% if @list_of_categories.count.zero? %>
+        <% 4.times do %>
+            <div class="featured_box">
+                <b>Category Name </b>
+                <span>Title<span>
+            </div>
+        <% end %>
+    <% else %>
+        <% @list_of_categories.each do |item| %>
+            <div class="featured_box">
+                <b>Category: <%= item.name %></b>
+                <span><%= item.travels.first.title %><span>
+            </div>
+        <% end %>
+    <%end%>
+</div>
