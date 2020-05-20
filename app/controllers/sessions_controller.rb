@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by_namel(params[:name])
+    user = User.find_by_name(params[:name])
 
     if user.nil?
       redirect_to login_path, notice: 'Username is not valid'

@@ -1,7 +1,7 @@
 <h1>Login</h1>
 <%= form_tag sessions_path do |f| %>
   <%= label_tag :name, "Enter your name" %><br>
-  <%= email_field_tag :name %><br><br>
+  <%= text_field_tag :name %><br><br>
   
   <%= submit_tag "Log In" %>
 <% end %>

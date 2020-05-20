@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <%= flash.notice %>
+    <%= flash.alert %>
+
+    <%= user_actions(current_user) %> - <%= link_to "Home", root_url %><%= create_article %>
+    <br>
     <%= yield %>
   </body>
 </html>
