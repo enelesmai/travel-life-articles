@@ -12,7 +12,7 @@
   <body>
     
     <nav>
-      <%= user_actions(current_user) %> - <%= link_to "Home", root_url %><%= create_article %>
+      <%= user_actions(current_user) %> - <%= link_to "Home", root_url %> | <%= link_to "Write an article", new_travel_path %>
     </nav>
 
     <p><%= flash.notice %></p>
