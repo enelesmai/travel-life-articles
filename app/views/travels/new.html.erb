@@ -12,6 +12,17 @@
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
+  <br><br>
+
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <%= check_box_tag "category_ids[]", category.id, false, class: 'form-control col-6', id:"checkbox#{category.id}" %>
+        <%= label_tag category.name, category.name %>
+      </li>
+    <% end %>
+  </ul>
+  <br><br>
 
   <%= f.submit "Create Article", disable_with: 'Creating...' %>
 <% end %>

@@ -1,7 +1,7 @@
 <h1><%= @travel.title %></h1>
 <h2><%= @travel.author.name %></h2>
 
-<%= image_tag(item.image) if item.image.attached? %>
+<%= image_tag(@travel.image) if @travel.image.attached? %>
 
 <p>
     <%= @travel.text %>
