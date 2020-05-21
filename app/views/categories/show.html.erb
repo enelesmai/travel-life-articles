@@ -1,5 +1,9 @@
-<h2>Traveling articles in <%= @category_name%> <h2>
+<h2>Traveling articles in <%= @category.name%> </h2>
 
 <% @travels_by_category.each do |item| %>
+    <img src="<%= item.image %>">
     <span><%= item.title %></span>
+    <p><%= item.text.truncate(100) %></p>
+    <span><%= item.votes.count %></span>
+    <%= button_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id) %>
 <% end %>
