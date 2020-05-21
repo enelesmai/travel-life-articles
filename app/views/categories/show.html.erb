@@ -1,7 +1,9 @@
 <h2>Traveling articles in <%= @category.name%> </h2>
 
 <% @travels_by_category.each do |item| %>
-    <img src="<%= item.image %>"><br><br>
+    
+    <%= image_tag(item.image) if item.image.attached? %>
+    
     <h4><%= item.title %></h4>
     <p><%= item.text.truncate(100) %></p>
     <p>Author: <%= item.author.name %><p>
