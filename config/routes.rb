@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :travels, only: [:new, :create, :show, :index]
   resources :categories, only: [:new, :create, :show, :index]
+  resources :comments, only: [:create]
   resources :votes, only: [:new, :create]
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]

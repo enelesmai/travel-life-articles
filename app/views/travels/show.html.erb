@@ -9,3 +9,6 @@
     <%= @travel.text %>
 </p>
 
+<h3>Comments</h3>
+<%= render partial: 'travels/comment', collection: @travel.comments %>
+<%= render partial: 'comments/form' %>

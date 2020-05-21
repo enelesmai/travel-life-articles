@@ -9,4 +9,6 @@
         <%= item.total_votes %>
         <%= button_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id) %>
     </p>
+    <h3>Comments</h3>
+    <%= render partial: 'travels/comment', collection: item.comments %>
 <% end %>

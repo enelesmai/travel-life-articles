@@ -12,6 +12,8 @@ class TravelsController < ApplicationController
         @travel = current_user.travels.build(travel_params)
         @travel.image = 'https://www.tourniagara.com/wp-content/uploads/2014/10/default-img.gif'
 
+        @travel.travel_categories.build(category_id: 2)
+
         if @travel.save
           redirect_to @travel, notice: 'Traveling article created successfully'
         else
@@ -21,6 +23,9 @@ class TravelsController < ApplicationController
 
     def show
         @travel = Travel.find(params[:id])
+    
+        @comment = Comment.new
+        @comment.travel_id = @travel.id
     end
 
     def featured_traveling_article
