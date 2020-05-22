@@ -12,15 +12,13 @@ class TravelsController < ApplicationController
 
     def create
         @travel = current_user.travels.build(travel_params)
-       
-        params[:category_ids].each do |category_id|
-            @travel.travel_categories.build(category_id: category_id)
-        end
+        @travel.category_ids = params[:category_ids]
         
         if @travel.save
-          redirect_to @travel, notice: 'Traveling article created successfully'
+            redirect_to @travel, notice: 'Traveling article created successfully'
         else
-          render :new
+            @categories = Category.all.order(:priority)
+            render :new
         end
     end
 

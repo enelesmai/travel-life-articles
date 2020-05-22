@@ -7,7 +7,22 @@ class Travel < ApplicationRecord
     has_many :comments
     has_one_attached :image
     validates :title, presence: true, length: { minimum: 10 }
-    validates :text, presence: true, length: { minimum: 200 }
+    validates :text, presence: true, length: { minimum: 100 }
+    validates :image, attached: true
+    before_save :ensure_travel_belongs_to_one_category
+
+    def ensure_travel_belongs_to_one_category
+        p "ensure_travel_belongs_to_one_category"
+        p self.category_ids.count
+        if self.category_ids.count.zero? 
+            errors.add(:base, "An article must belongs to one category at least")
+            p "false"
+            throw(:abort)
+        else
+            p "true"
+            true
+        end
+    end   
 
     def total_votes
         votes.length
