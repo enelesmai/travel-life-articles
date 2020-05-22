@@ -22,10 +22,9 @@
 
  .link-category, .link-category:hover {
    color: #fff;
-   text-decoration: underline;
-   text-decoration-color: yellow;
    font-weight: bold;
    font-size: 20px;
+   border-bottom: 2px solid yellow;
  }
 
   .link, .link:hover{

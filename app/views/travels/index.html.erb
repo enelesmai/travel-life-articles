@@ -25,10 +25,10 @@
     <% else %>
         <% @list_of_categories.each do |item| %>
             <div class="featured-box">
-                <a href="#">
+                <%= link_to travel_path(item.travels.first.id) do %>
                     <%= image_tag(item.travels.first.image,  options = {class:'article-image'}) if item.travels.first.image.attached? %>
                     <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !item.travels.first.image.attached? %>    
-                </a>
+                <%end%>
                 <div class="d-flex flex-column align-items-start top">
                         <b><%= link_to item.name, category_path(item.id), class:'link-category' %></b>
                 </div>
