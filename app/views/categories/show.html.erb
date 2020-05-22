@@ -14,7 +14,7 @@
                 <p>
                     Author: <%= item.author.name %> | 
                     <%= item.total_votes %>
-                    <%= link_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), method: :post, class: 'fa fa-thumbs-up header-color vote' %>
+                    <%= link_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), method: :post, class: 'fa fa-thumbs-up header-color vote' if !current_user.nil? %>
                 </p>
                 <p><%= item.text.truncate(100) %></p>
                 <%= link_to "Read more", travel_path(item.id), class:'link-article header-color' %></span>
