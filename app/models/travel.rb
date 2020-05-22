@@ -6,6 +6,8 @@ class Travel < ApplicationRecord
     has_many :categories, through: :travel_categories
     has_many :comments
     has_one_attached :image
+    validates :title, presence: true, length: { minimum: 10 }
+    validates :text, presence: true, length: { minimum: 200 }
 
     def total_votes
         votes.length
