@@ -9,10 +9,9 @@
         <%= item.total_votes %>
     </p>
 
-    <div class='image-article'>
-        <%= image_tag(item.image, options = {class:'article_image'}) if item.image.attached? %>
-        <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article_image'}) if !item.image.attached? %>    
-    </div>
+   
+        <%= image_tag(item.image, options = {class:'article-image'}) if item.image.attached? %>
+        <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !item.image.attached? %>    
 
     <p class="mt-2"><%= item.text.truncate(100) %></p>
     
