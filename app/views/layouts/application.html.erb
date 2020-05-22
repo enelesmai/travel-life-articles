@@ -29,11 +29,12 @@
           <li><%= link_to "WRITE AN ARTICLE", new_travel_path %></li>
         <% end %>
       </ul>
-      <div class="d-flex align-items-end side-space user-actions">
+      <div class="d-flex align-items-end justify-content-end side-space user-actions">
         <%= user_actions(current_user) %>
         <i class="fa fa-search search-icon"></i>
       </div>
     </nav>
+    <div class="header-line">
 
     <% if flash.notice.present? %>
       <div class="alert alert-primary text-center" role="alert">

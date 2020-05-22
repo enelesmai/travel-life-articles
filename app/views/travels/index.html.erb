@@ -1,24 +1,37 @@
-<div class="portrait">
-    <% if @featured_traveling_article.nil? %>
-        <h2>There is no articles</h2>
-    <% else %>
-        <h2><%= @featured_traveling_article.title%></h2>
-    <% end %>
+<div class="cover d-flex justify-content-start align-items-end">
+    <header>
+        <% if @featured_traveling_article.nil? %>
+            <h3 class="header-color">There is no articles</h3>
+        <% else %>
+            <h3 class="header-color"><%= @featured_traveling_article.title%></h3>
+            <span><%=@featured_traveling_article.text.truncate(80)%></span>
+        <% end %>
+    </header>    
 </div>
-<div class="feautured_container">
+<aside class="feautures d-flex flex-row">
     <% if @list_of_categories.count.zero? %>
-        <% 4.times do %>
+        <% 3.times do %>
             <div class="featured_box">
-                <b>Category Name</b>
-                <span>Title<span>
+                 <div class="d-flex align-items-end justify-content-start">
+                    <b>Category Name</b>
+                    <span>Title<span>
+                </div>
             </div>
         <% end %>
     <% else %>
         <% @list_of_categories.each do |item| %>
-            <div class="featured_box">
-                <b><%= link_to item.name, category_path(item.id) %></b>
-                <span><%= link_to item.travels.first.title, travel_path(item.travels.first.id) %><span>
+            <div class="featured-box">
+                <a href="#">
+                    <%= image_tag(item.travels.first.image) if item.travels.first.image.attached? %>
+                    <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !item.travels.first.image.attached? %>    
+                </a>
+                <div class="d-flex flex-column align-items-start top">
+                        <b><%= link_to item.name, category_path(item.id), class:'link-category' %></b>
+                </div>
+                <div class="d-flex flex-column align-items-start resume">
+                        <span><%= link_to item.travels.first.title, travel_path(item.travels.first.id), class:'link' %></span>
+                </div>
             </div>
         <% end %>
     <%end%>
-</div>
+</aside>

@@ -20,6 +20,20 @@
     color: #4D433D;  
  }
 
+ .link-category, .link-category:hover {
+   color: #fff;
+   text-decoration: underline;
+   text-decoration-color: yellow;
+   font-weight: bold;
+   font-size: 20px;
+ }
+
+ .link,.link:hover{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+ }
+
  .article-image {
     display: block;
     margin-left: auto;
@@ -38,11 +52,11 @@
  }
 
  .center-space {
-     width: 60%;
+     width: 56%;
  }
 
  .side-space {
-    width: 20%;
+    width: 22%;
  }
 
  .separator {
@@ -72,9 +86,14 @@ nav ul li a:hover, nav a:hover, span.brand-name:hover {
 
  nav {
     background: #fff;  
-    padding: 20px 0; 
-    margin-bottom: 20px; 
+    padding: 7px 0; 
     box-sizing: border-box;
+ }
+
+ .header-line{
+     background-color: #f76108;
+     width:100%;
+     height: 10px;
  }
 
  .search-icon {
@@ -214,4 +233,82 @@ footer{
     left: 8px;
     cursor: pointer;
     position: absolute;
+}
+
+/*index*/
+.cover {
+    margin-top: 0;
+    width: 100%;
+    background: url(https://web.archive.org/web/20140301004302im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg) 50% 100% no-repeat;
+    overflow: hidden;
+    height: 600px;
+  }
+  
+  header {
+      position: relative;
+      bottom: 0;
+        height: auto;
+    line-height: 54px;
+    background-color: rgb(78, 68, 63,.8);
+    padding: 0 10px;
+    width: 100%;
+  }
+  
+  header:hover {
+    cursor: pointer;
+  }
+  
+  h1 {
+    font-size: 54px;
+  }
+  
+  h2 {
+    z-index: 10;
+    font-size: 36px;
+  }
+  
+  .see-more {
+    font-size: 24px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    height: 40px;
+  }
+  
+  .center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  
+  .feautures {
+    z-index: 0;
+    padding-bottom: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    max-width: 1440px;
+    box-sizing: border-box;
+  }
+  
+  .featured-box {
+    width: 364px;
+    height: 100%;
+  }
+
+  .resume {
+      position: relative;
+      top: -48px;
+      background-color: rgb(78, 68, 63,.8);
+      padding-left: 7px;
+  }
+
+  .top {
+    position: relative;
+    top: -180px;
+    background-color: rgb(78, 68, 63,.8);
+    padding-left: 7px;
 }
