@@ -20,6 +20,13 @@
     color: #4D433D;  
  }
 
+ .article_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+ }
+
  .header-color {
      color: #f76108;
  }
@@ -36,6 +43,10 @@
 
  .side-space {
     width: 20%;
+ }
+
+ .separator {
+    border-top: 1px solid #f76108;
  }
 
  nav ul li a {

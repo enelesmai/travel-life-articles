@@ -2,15 +2,26 @@
 
 <% @travels_by_category.each do |item| %>
     
-    <%= image_tag(item.image) if item.image.attached? %>
-    
     <h4><%= item.title %></h4>
-    <p><%= item.text.truncate(100) %></p>
-    <p>Author: <%= item.author.name %><p>
     <p>
+        Author: <%= item.author.name %> | 
+        <%= link_to '', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), mehod: :post, class: 'fa fa-thumbs-up header-color' %>
         <%= item.total_votes %>
-        <%= button_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id) %>
     </p>
-    <h3>Comments</h3>
-    <%= render partial: 'travels/comment', collection: item.comments %>
+
+    <div class='image-article'>
+        <%= image_tag(item.image, options = {class:'article_image'}) if item.image.attached? %>
+        <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article_image'}) if !item.image.attached? %>    
+    </div>
+
+    <p class="mt-2"><%= item.text.truncate(100) %></p>
+    
+    <%if !item.comments.count.zero?%>
+        <h3>Comments</h3>
+        <%= render partial: 'travels/comment', collection: item.comments %>
+    <% end %>
+
+    <hr class="separator">
 <% end %>
+
+<br><br>
