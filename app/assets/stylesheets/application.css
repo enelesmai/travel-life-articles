@@ -248,7 +248,7 @@ footer{
       bottom: 0;
         height: auto;
     line-height: 54px;
-    background-color: rgb(78, 68, 63,.8);
+    background-color: rgba(78, 68, 63,.8);
     padding: 0 10px;
     width: 100%;
   }
@@ -300,14 +300,14 @@ footer{
   .resume {
       position: relative;
       top: -48px;
-      background-color: rgb(78, 68, 63,.8);
+      background-color: rgba(78, 68, 63,.8);
       padding-left: 7px;
   }
 
   .top {
     position: relative;
     top: -180px;
-    background-color: rgb(78, 68, 63,.8);
+    background-color: rgba(78, 68, 63,.8);
     padding-left: 7px;
 }
 

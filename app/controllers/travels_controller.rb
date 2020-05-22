@@ -18,6 +18,7 @@ class TravelsController < ApplicationController
             redirect_to @travel, notice: 'Traveling article created successfully'
         else
             @categories = Category.all.order(:priority)
+            flash.notice = 'Fill in the required fields'
             render :new
         end
     end

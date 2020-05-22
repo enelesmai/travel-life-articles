@@ -12,14 +12,10 @@ class Travel < ApplicationRecord
     before_save :ensure_travel_belongs_to_one_category
 
     def ensure_travel_belongs_to_one_category
-        p "ensure_travel_belongs_to_one_category"
-        p self.category_ids.count
         if self.category_ids.count.zero? 
             errors.add(:base, "An article must belongs to one category at least")
-            p "false"
             throw(:abort)
         else
-            p "true"
             true
         end
     end   
