@@ -1,7 +1,9 @@
-<h1>Login</h1>
-<%= form_tag sessions_path do |f| %>
-  <%= label_tag :name, "Enter your name" %><br>
-  <%= text_field_tag :name %><br><br>
-  
-  <%= submit_tag "Log In" %>
-<% end %>
+<div class="text-center">
+  <h1 class="header-color">Login</h1>
+  <%= form_tag sessions_path, method: :post, class:'form-signin' do |f| %>
+    <%= label_tag :name, "Enter your name:" %><br>
+    <%= text_field_tag :name, nil, class:'form-control' %>
+    
+    <%= submit_tag "Log In", class:'btn btn-lg btn-primary btn-block mt-3' %>
+  <% end %>
+</div>

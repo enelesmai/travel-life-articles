@@ -4,12 +4,12 @@ module ApplicationHelper
 
         if current_user
             html += "#{current_user.name}"
-            html += ' - '
-            html += link_to('Log Out', logout_path)
+            html += ' | '
+            html += link_to('LOGOUT', logout_path)
         else
-            html += link_to('Sign Up', sign_up_path)
-            html += ' or '
-            html += link_to('Log In', login_path)
+            html += link_to('REGISTER', sign_up_path, class:'mr-2 ml-2')
+            html += ' | '
+            html += link_to('LOGIN', login_path, class:'mr-2 ml-2')
         end
         html.html_safe
     end

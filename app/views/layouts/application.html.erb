@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TravelLifeArticles</title>
+    <title>TrAvEl LiFe Articles</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     
-    <nav>
-      <%= user_actions(current_user) %> - <%= link_to "Home", root_url %> | <%= link_to "Write an article", new_travel_path %>
+    <nav class="d-flex justify-content-center">
+      <div class="logo d-flex align-items-start side-space">
+        <%= link_to "/" do %>
+          <span class="brand-name font-weight-bold">TrAvEl LiFe</span>
+        <% end %>
+        <span class="header-color font-weight-bold">○</span>
+      </div>
+      <ul class="nav justify-content-center center-space">
+        <li><%= link_to "HOME", root_url %></li>
+        <li><%= link_to "WRITE AN ARTICLE", new_travel_path %></li>
+      </ul>
+      <div class="d-flex align-items-end side-space user-actions">
+        <%= user_actions(current_user) %>
+        <i class="fa fa-search search-icon"></i>
+      </div>
     </nav>
 
-    <p><%= flash.notice %></p>
-    <p><%= flash.alert %></p>
+    <% if flash.notice.present? %>
+      <div class="alert alert-primary text-center" role="alert">
+        <%= flash.notice %>
+      </div>
+    <% end %>
+    <% if flash.alert.present? %>
+      <div class="alert alert-warning text-center" role="alert">
+        <%= flash.alert %>
+      </div>
+    <% end %>
 
-    <br>
-    <%= yield %>
+    <main class="container-fluid">
+      <%= yield %>
+    </main>
+
+    <%= render partial: 'layouts/footer' %>
+
   </body>
 </html>
