@@ -9,7 +9,7 @@
 </p>
 
 <% if !@travel.comments.count.zero?%>
-    <h5>Comments</h5>
+    <h4>Comments</h4>
     <%= render partial: 'travels/comment', collection: @travel.comments %>
 <% end %>
 
