@@ -3,9 +3,9 @@ module ApplicationHelper
         html = ''
 
         if current_user
-            html += "#{current_user.name}"
+            html += "Welcome #{current_user.name}!"
             html += ' | '
-            html += link_to('LOGOUT', logout_path)
+            html += link_to('LOGOUT', logout_path, class:'mr-2 ml-2')
         else
             html += link_to('REGISTER', sign_up_path, class:'mr-2 ml-2')
             html += ' | '

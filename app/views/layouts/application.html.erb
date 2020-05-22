@@ -25,7 +25,9 @@
       </div>
       <ul class="nav justify-content-center center-space">
         <li><%= link_to "HOME", root_url %></li>
-        <li><%= link_to "WRITE AN ARTICLE", new_travel_path %></li>
+        <% if !current_user.nil? %>
+          <li><%= link_to "WRITE AN ARTICLE", new_travel_path %></li>
+        <% end %>
       </ul>
       <div class="d-flex align-items-end side-space user-actions">
         <%= user_actions(current_user) %>
