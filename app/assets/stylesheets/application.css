@@ -46,6 +46,14 @@
     width: 50%;
  }
 
+ .article-image-full {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
  .header-color {
      color: #f76108;
  }
@@ -299,14 +307,14 @@ footer{
 
   .resume {
       position: relative;
-      top: -48px;
+      top: -54px;
       background-color: rgba(78, 68, 63,.8);
       padding-left: 7px;
   }
 
   .top {
     position: relative;
-    top: -180px;
+    top: -200px;
     background-color: rgba(78, 68, 63,.8);
     padding-left: 7px;
 }
