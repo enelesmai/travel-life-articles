@@ -138,8 +138,9 @@ footer{
     height: 50px;
     color: white;
     background-color: rgb(78, 68, 63);
+    position: fixed;
+    left: 0;
     bottom: 0;
-    position: absolute;
     width: 100%;
 }
 
