@@ -1,5 +1,9 @@
 <div class="cover d-flex justify-content-start align-items-end">
     <header>
+        <a href="#">
+            <%= image_tag(@featured_traveling_article.image,  options = {class:'article-image'}) if @featured_traveling_article.image.attached? %>
+            <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png',  options = {class:'article-image'}) if !@featured_traveling_article.image.attached? %>    
+        </a>
         <% if @featured_traveling_article.nil? %>
             <h3 class="header-color">There is no articles</h3>
         <% else %>
@@ -22,7 +26,7 @@
         <% @list_of_categories.each do |item| %>
             <div class="featured-box">
                 <a href="#">
-                    <%= image_tag(item.travels.first.image) if item.travels.first.image.attached? %>
+                    <%= image_tag(item.travels.first.image,  options = {class:'article-image'}) if item.travels.first.image.attached? %>
                     <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !item.travels.first.image.attached? %>    
                 </a>
                 <div class="d-flex flex-column align-items-start top">
