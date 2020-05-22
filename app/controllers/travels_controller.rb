@@ -35,7 +35,7 @@ class TravelsController < ApplicationController
     end
 
     def list_of_categories
-        Category.all.order(:priority).take(3)
+        Category.all.order(:priority).includes(:travels).take(3)
     end
 
     def travel_params
