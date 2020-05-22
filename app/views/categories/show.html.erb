@@ -1,26 +1,26 @@
-<h2>Traveling articles in <%= @category.name%> </h2>
+<div class="articles">
 
-<% @travels_by_category.each do |item| %>
+<% @travels_by_category.each_with_index do |item, i| %>
+
+    <div class="article-card" style="flex-direction: <%= ((i/2).floor() % 2 == 0 ? 'row' : 'row-reverse') %>;">
+        <% if item.image.attached? %> 
+            <%= image_tag(item.image,  options = {class:'articles-img-img'}) %>
+        <%else%>
+            <div class="articles-img" style="background-image: url('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png')"></div>
+        <%end%>
+        <article class="articles-box">
+            <h5><%= @category.name%></h5>
+            <p class="title"><%= item.title %></p>
+            <p>
+                Author: <%= item.author.name %> | 
+                <%= link_to '', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), mehod: :post, class: 'fa fa-thumbs-up header-color' %>
+                <%= item.total_votes %>
+            </p>
+            <p><%= item.text.truncate(100) %></p>
+            <%= link_to "Read more", travel_path(item.id), class:'link header-color' %></span>
+        </article>
+    </div>
     
-    <h4><%= item.title %></h4>
-    <p>
-        Author: <%= item.author.name %> | 
-        <%= link_to '', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), mehod: :post, class: 'fa fa-thumbs-up header-color' %>
-        <%= item.total_votes %>
-    </p>
-
-   
-        <%= image_tag(item.image, options = {class:'article-image'}) if item.image.attached? %>
-        <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !item.image.attached? %>    
-
-    <p class="mt-2"><%= item.text.truncate(100) %></p>
-    
-    <%if !item.comments.count.zero?%>
-        <h3>Comments</h3>
-        <%= render partial: 'travels/comment', collection: item.comments %>
-    <% end %>
-
-    <hr class="separator">
 <% end %>
 
-<br><br>
+</div>
