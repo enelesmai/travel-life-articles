@@ -1,16 +1,12 @@
 class CategoriesController < ApplicationController
-    def index
+  def index; end
 
-    end
+  def new; end
 
-    def new; end
+  def create; end
 
-    def create
-    end
-
-    def show
-        @category = Category.find(params[:id])
-        @travels_by_category = Category.find(params[:id]).travels
-    end
-
+  def show
+    @category = Category.find(params[:id])
+    @travels_by_category = Category.find(params[:id]).travels
+  end
 end
