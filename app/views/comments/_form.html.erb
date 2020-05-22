@@ -5,14 +5,14 @@
     <%= f.hidden_field :travel_id %>
   </p>
   <p>
-    <%= f.label :author_name, "Your Name"  %><br/>
-    <%= f.text_field :author_name %>
+    <%= f.label :author_name, "Your Name:"  %><br/>
+    <%= f.text_field :author_name, class: 'form-control' %>
   </p>
   <p>
-    <%= f.label :body, "Your Comment" %><br/>
-    <%= f.text_area :body %>
+    <%= f.label :body, "Your Comment:" %><br/>
+    <%= f.text_area :body, class: 'form-control' %>
   </p>
   <p>
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', class:'btn btn-lg btn-primary btn-block mt-3' %>
   </p>
 <% end %>
