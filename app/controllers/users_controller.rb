@@ -10,6 +10,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path, notice: 'Successfully signed up!'
         else
+            flash.alert = 'User already exists!'
             render :new
         end
     end
