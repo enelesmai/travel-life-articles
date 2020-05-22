@@ -284,7 +284,6 @@ footer{
   
   .feautures {
     z-index: 0;
-    padding-bottom: 90px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -311,4 +310,8 @@ footer{
     top: -180px;
     background-color: rgb(78, 68, 63,.8);
     padding-left: 7px;
+}
+
+h1, h2{
+  padding-top:20px;
 }

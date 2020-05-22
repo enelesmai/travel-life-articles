@@ -47,12 +47,16 @@
       </div>
     <% end %>
 
-    <main class="container text-white mb-5">
-      <%= yield %>
-    </main>
-
     <% if @no_footer.nil? %>
+      <main class="container text-white mb-5">
+        <%= yield %>
+      </main>
+
       <%= render partial: 'layouts/footer' %>
+    <%else%>
+      <main class="container text-white">
+        <%= yield %>
+      </main>
     <% end %>
 
   </body>
