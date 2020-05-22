@@ -28,14 +28,14 @@
             <% if !item.travels.first.nil? %>
                 <div class="featured-box">
                     <%= link_to travel_path(item.travels.first.id) do %>
-                        <%= image_tag(item.travels.first.image,  options = {class:'article-image-full'}) if item.travels.first.image.attached? %>
-                        <%= image_tag('https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/2016-09/safety-trip-mexico1.jpg', options = {class:'article-image-full'}) if !item.travels.first.image.attached? %>    
+                        <%= image_tag(item.travels.order(created_at: :desc).first.image,  options = {class:'article-image-full'}) if item.travels.order(created_at: :desc).first.image.attached? %>
+                        <%= image_tag('https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/2016-09/safety-trip-mexico1.jpg', options = {class:'article-image-full'}) if !item.travels.order(created_at: :desc).first.image.attached? %>    
                     <%end%>
                     <div class="d-flex flex-column align-items-start top">
                             <b><%= link_to item.name, category_path(item.id), class:'link-category' %></b>
                     </div>
                     <div class="d-flex flex-column align-items-start resume">
-                            <span><%= link_to item.travels.first.title, travel_path(item.travels.first.id), class:'link' %></span>
+                            <span><%= link_to item.travels.order(created_at: :desc).first.title, travel_path(item.travels.order(created_at: :desc).first.id), class:'link' %></span>
                     </div>
                 </div>
             <% end %>

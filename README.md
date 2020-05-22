@@ -34,7 +34,7 @@ then run the server on https://localhost:3000
 ![image](https://user-images.githubusercontent.com/5160907/82706757-1c02b180-9c40-11ea-8628-cec23b25a928.png)
 
 ## Live Demo
-You can see the here the [live preview](https://repl.it/@enelesmai/Ruby-Scraper)
+You can see the here the [live preview](https://immense-thicket-35902.herokuapp.com/)
 
 ## Features
 * The user logs in to the app, only by typing the username .
