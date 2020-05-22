@@ -13,7 +13,7 @@
                 <p class="title"><%= item.title %></p>
                 <p>
                     Author: <%= item.author.name %> | 
-                    <%= link_to '', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), mehod: :post, class: 'fa fa-thumbs-up header-color' %>
+                    <%= link_to '', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id), mehod: :post, class: 'fa fa-thumbs-up header-color vote' %>
                     <%= item.total_votes %>
                 </p>
                 <p><%= item.text.truncate(100) %></p>

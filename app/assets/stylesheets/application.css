@@ -20,6 +20,12 @@
     color: #4D433D;  
  }
 
+ a.vote:hover {
+  text-decoration:none;
+  color: #f76108;
+  font-weight: bolder;
+ }
+
  .link-category, .link-category:hover {
    color: #fff;
    font-weight: bold;
