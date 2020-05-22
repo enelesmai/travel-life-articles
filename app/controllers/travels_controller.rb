@@ -2,6 +2,7 @@ class TravelsController < ApplicationController
     def index
         @featured_traveling_article = featured_traveling_article
         @list_of_categories = list_of_categories
+        @no_footer = true
     end
 
     def new 

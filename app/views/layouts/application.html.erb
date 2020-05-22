@@ -46,11 +46,13 @@
       </div>
     <% end %>
 
-    <main class="container-fluid">
+    <main class="container text-white">
       <%= yield %>
     </main>
 
-    <%= render partial: 'layouts/footer' %>
+    <% if @no_footer.nil? %>
+      <%= render partial: 'layouts/footer' %>
+    <% end %>
 
   </body>
 </html>
