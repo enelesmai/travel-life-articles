@@ -1,28 +1,31 @@
-<h1>Create a new traveling article</h1>
+<h1 class="header-color">Create a new traveling article</h1>
 
 <%= form_for @travel, local:true, multipart: true do |f| %>
 
   <%= f.label :title, "Title:" %><br>
-  <%= f.text_area :title %><br><br>
+  <%= f.text_field :title, class:'form-control' %><br><br>
 
   <%= f.label :text, "Text:" %><br>
-  <%= f.text_area :text %><br><br>
+  <%= f.text_area :text, class:'form-control' %><br><br>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :image, "Image:" %>
+    <%= f.file_field :image, class:'form-control' %>
   </div>
   <br><br>
 
-  <ul>
-    <% @categories.each do |category| %>
-      <li>
-        <%= check_box_tag "category_ids[]", category.id, false, class: 'form-control col-6', id:"checkbox#{category.id}" %>
-        <%= label_tag category.name, category.name %>
-      </li>
-    <% end %>
-  </ul>
-  <br><br>
+  <h5>Select categories</h5>
+  <div class='form-group form-check'>
+  <% @categories.each do |category| %>
+    <%= check_box_tag "category_ids[]", category.id, false, class: 'form-check-input', id:"checkbox#{category.id}" %>
+    <span>
+      <%= label_tag category.name, category.name, class: 'form-check-label' %>
+    </span>
+    <br>
+  <% end %>
+  </div>
+  <br>
 
-  <%= f.submit "Create Article", disable_with: 'Creating...' %>
+  <%= f.submit "Create Article", disable_with: 'Creating...', class:'btn btn-lg btn-primary btn-block mt-3' %>
+  <br><br>
 <% end %>
