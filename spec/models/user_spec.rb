@@ -2,22 +2,13 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
    describe 'Model.user' do
-    context 'validates field name' do
-      let(:user) { build(:user) }
-      it 'creates a new instance of user' do
-        expect(user).to be_a_new(User)
-      end
-      it 'username must be valid' do
-        expect(user).to be_valid
-      end
-      it 'username must not be valid' do
-        user.name = nil
-        expect(user).to_not be_valid
-      end
-      it 'username length must be less than 30 characters' do
-        user.name = '12y3hadiuha9dqidajsodiajsdoaisdoaisjda'
-        expect(user).to_not be_valid
-      end
+    context 'validates User model' do
+      subject { build(:user) }
+      it { should validate_uniqueness_of(:name) }
+      it { should validate_presence_of(:name) }
+      it { should validate_length_of(:name).
+               is_at_most(30).
+               on(:create) }
     end
   end
 end
