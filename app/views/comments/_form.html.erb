@@ -5,17 +5,8 @@
     <%= f.hidden_field :travel_id %>
   </p>
 
-  <% if current_user.nil? %>
-  <p>
-    <%= f.label :author_name, "Your Name:"  %><br/>
-    <%= f.text_field :author_name, class: 'form-control' %>
-  </p>
-  <% else %>
-    <p>
-      <%= f.label :author_name, "Your Name: #{current_user.name}"  %><br/>
-      <%= f.hidden_field :author_name, :value => current_user.name %>
-    </p>
-  <% end %>
+  <%= show_ask_author(f) %>
+  
   <p>
     <%= f.label :body, "Your Comment:" %><br/>
     <%= f.text_area :body, class: 'form-control' %>
