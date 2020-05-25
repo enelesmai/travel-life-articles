@@ -1,17 +1,14 @@
 <h1 class="header-color"><%= @travel.title %></h1>
 <h2>Author: <%= @travel.author.name %></h2>
 
-<%= image_tag(@travel.image, options = {class:'article-image'}) if @travel.image.attached? %>
-<%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png', options = {class:'article-image'}) if !@travel.image.attached? %>    
+
+<%= show_image %>    
 
 <p>
     <%= @travel.text %>
 </p>
 
-<% if !@travel.comments.count.zero?%>
-    <h4>Comments</h4>
-    <%= render partial: 'travels/comment', collection: @travel.comments %>
-<% end %>
+<%= show_comments %>
 
 <hr class="separator">
 <%= render partial: 'comments/form' %>

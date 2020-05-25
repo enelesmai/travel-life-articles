@@ -13,4 +13,18 @@ module TravelsHelper
     end
     html.html_safe
   end
+  def show_comments
+    html = ''
+    if !@travel.comments.count.zero?
+      html += "<h4>Comments</h4>"
+      html += render partial: 'travels/comment', collection: @travel.comments
+    end
+    html.html_safe
+  end
+  def show_image
+    html = ''
+    html += image_tag(@travel.image, options = {class:'article-image'}) if @travel.image.attached?
+    html += image_tag(@travel.default_image, options = {class:'article-image'}) if !@travel.image.attached?
+    html.html_safe
+  end
 end
