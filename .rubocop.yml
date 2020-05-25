@@ -63,3 +63,8 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false

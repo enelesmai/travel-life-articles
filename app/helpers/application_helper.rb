@@ -66,6 +66,7 @@ module ApplicationHelper
     end
     html.html_safe
   end
+
   def set_default_image
     'https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png'
   end
