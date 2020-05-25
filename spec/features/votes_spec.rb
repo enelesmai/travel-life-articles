@@ -1,32 +1,26 @@
 require 'rails_helper'
 
 RSpec.feature 'Votes', type: :feature do
+  let(:user) { create(:user) }
+  let(:user_to_vote) { create(:user) }
+  let(:travel) { build(:travel) }
   scenario 'Voting an article' do
-    @user1 = User.create(name: 'User1')
-    @user2 = User.create(name: 'User2')
-
-    @category = Category.new(name: 'Business travel', priority: 1)
-    @category.save
-
-    @travel = Travel.new(title: 'test travel article', text: @text, author_id: @user1.id, image: '/image.jpg')
-    @travel.categories << @category
-
-    @user1.save
+    @category = Category.create(name: 'Business travel', priority: 1)
+    travel.categories << @category
 
     visit '/login'
-    fill_in 'name', with: 'User2'
+    fill_in 'name', with: user.name
     click_button 'Log In'
 
     visit 'travels/new'
-    @text = 'sja bkajsbkas ajsn jbdkasj' * 10
-    fill_in 'travel_title', with: 'a title for the event'
-    fill_in 'travel_text', with: @text
+    fill_in 'travel_title', with: travel.title
+    fill_in 'travel_text', with: travel.text
     page.attach_file('travel_image', File.expand_path('./spec/images/example.jpg'))
     find('#checkbox1').click
     click_button 'Create Article'
 
     visit '/login'
-    fill_in 'name', with: 'User1'
+    fill_in 'name', with: user_to_vote.name
     click_button 'Log In'
 
     visit '/categories/1'
