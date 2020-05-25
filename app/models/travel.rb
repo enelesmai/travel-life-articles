@@ -23,4 +23,8 @@ class Travel < ApplicationRecord
   def total_votes
     votes.length
   end
+
+  def default_image
+    'https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png'
+  end
 end

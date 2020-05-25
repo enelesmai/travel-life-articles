@@ -41,6 +41,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'active_storage_validations'
 
+gem 'ruby-growl', '~> 4.1'
+gem 'ruby_gntp', '~> 0.3.4'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -48,7 +51,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -60,6 +62,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+  gem 'bullet', require: true
 end
 
 group :test do

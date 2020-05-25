@@ -7,6 +7,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @travels_by_category = Category.find(params[:id]).travels
+    @travels_by_category = Category.find(params[:id]).travels.includes([:image_attachment]).includes([:author]).includes([:votes])
   end
 end

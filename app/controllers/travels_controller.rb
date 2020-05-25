@@ -31,7 +31,7 @@ class TravelsController < ApplicationController
   end
 
   def featured_traveling_article
-    Travel.all.includes(:votes).max_by { |t| t.votes.length }
+    Travel.all.includes(:votes).includes([:image_attachment]).max_by { |t| t.votes.length }
   end
 
   def list_of_categories
