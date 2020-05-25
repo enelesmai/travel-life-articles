@@ -8,7 +8,7 @@ RSpec.feature 'Travels', type: :feature do
     fill_in 'name', with: user.name
     click_button 'Log In'
 
-    Category.create(name:'Bussiness Travel',priority:1)
+    Category.create(name: 'Bussiness Travel', priority: 1)
 
     visit 'travels/new'
     fill_in 'travel_title', with: travel.title

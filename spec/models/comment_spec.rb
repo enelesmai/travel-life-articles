@@ -6,10 +6,14 @@ RSpec.describe Comment, type: :model do
       subject { build(:comment) }
       it { should validate_presence_of(:author_name) }
       it { should validate_presence_of(:body) }
-      it { should validate_length_of(:author_name).
-               is_at_least(6)}
-      it { should validate_length_of(:body).
-        is_at_least(10)}
+      it {
+        should validate_length_of(:author_name)
+          .is_at_least(6)
+      }
+      it {
+        should validate_length_of(:body)
+          .is_at_least(10)
+      }
     end
   end
 end

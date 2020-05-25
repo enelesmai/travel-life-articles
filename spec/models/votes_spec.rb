@@ -6,7 +6,7 @@ RSpec.describe Vote, type: :model do
       let(:travel) { build(:travel) }
       let(:user) { build(:user) }
       it 'adds a new vote' do
-        @vote = Vote.new(user: @user, travel: @travel) 
+        @vote = Vote.new(user: @user, travel: @travel)
         expect(@vote).to be_a_new(Vote)
       end
     end
