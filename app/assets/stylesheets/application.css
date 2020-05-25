@@ -18,6 +18,7 @@
  body {
     background-color: #4E433D;  
     color: #4D433D;  
+    font-family: 'Sarala', 'Roboto', sans-serif;
  }
 
  a.vote:hover {
