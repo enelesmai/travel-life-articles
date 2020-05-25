@@ -23,4 +23,44 @@ module ApplicationHelper
 
     html.html_safe
   end
+
+  def link_to_article
+    html = ''
+    html += '<li>'
+    html += link_to "WRITE AN ARTICLE", new_travel_path if !current_user.nil?
+    html += '</li>'
+    html.html_safe
+  end
+
+  def show_alert
+    html = ''
+    html += "<div class='alert alert-primary text-center' role='alert'>
+      #{flash.alert}
+      </div>" if flash.alert.present?
+    html.html_safe
+  end
+
+  def show_notice
+    html = ''
+    html += "<div class='alert alert-warning text-center' role='alert'>
+      #{flash.notice}
+      </div>" if flash.notice.present?
+    html.html_safe
+  end
+
+  def show_content(y)
+    html = ''
+    if @no_footer.nil? 
+      html += "<main class='container text-white mb-5'>
+      #{y} 
+      </main>"
+      html += render partial: 'layouts/footer'
+    else
+      html += "<main class='container text-white'>
+      #{y} 
+      </main>"
+    end
+    html.html_safe
+  end
+
 end
