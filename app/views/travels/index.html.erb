@@ -1,17 +1,19 @@
 <div class="cover d-flex justify-content-start align-items-end">
-    <header>
+    
+    <a href="#" class="fill-content">
         <% if @featured_traveling_article.nil? %>
-            <a href="#">
-                <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png',  options = {class:'article-image'}) %>    
-            </a>
+            <%= image_tag('https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png',  options = {class:'article-image'}) %>    
             <h3 class="header-color">There is no articles</h3>
         <% else %>
-            <%= image_tag(@featured_traveling_article.image,  options = {class:'article-image-full'}) if @featured_traveling_article.image.attached? %>
+            <%= image_tag(@featured_traveling_article.image,  options = {class:'img-feat d-flex align-items-end'}) if @featured_traveling_article.image.attached? %>
             <%= image_tag('https://concepto.de/wp-content/uploads/2019/05/aurora-boreal-polar-e1559012098292.jpg',  options = {class:'article-image-full'}) if !@featured_traveling_article.image.attached? %>    
-            <h3 class="header-color"><%= @featured_traveling_article.title%></h3>
-            <span><%=@featured_traveling_article.text.truncate(80)%></span>
+            <div class="content-feat position-relative font-weight-bold p-2">
+                <h3 class="header-color"><%= @featured_traveling_article.title%></h3>
+                <span><%=@featured_traveling_article.text.truncate(80)%></span>
+            </div>
         <% end %>
-    </header>    
+    </a>
+    
 </div>
 <aside class="feautures d-flex flex-row">
     <% if @list_of_categories.count.zero? %>
@@ -42,5 +44,3 @@
         <% end %>
     <%end%>
 </aside>
-
-<br><br>

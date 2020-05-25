@@ -18,7 +18,7 @@
  body {
     background-color: #4E433D;  
     color: #4D433D;  
-    font-family: 'Sarala', 'Roboto', sans-serif;
+    font-family: 'Cabin', 'Roboto', sans-serif;
  }
 
  a.vote:hover {
@@ -76,6 +76,25 @@
 
  .separator {
     border-top: 1px solid #f76108;
+ }
+
+ .fill-content {
+  width: 100%;
+  height: auto;
+ }
+
+ .img-feat {
+  width: 100%;
+  background-size: cover;
+ }
+
+ .content-feat {
+   bottom: 80px;
+ }
+
+ a.fill-content {
+   color: #fff;
+   text-decoration: none;
  }
 
  nav ul li a {
@@ -300,10 +319,12 @@ footer{
     overflow: hidden;
     max-width: 1440px;
     box-sizing: border-box;
+    top: -82px;
+    position: relative;
   }
   
   .featured-box {
-    width: 364px;
+    width: 370px;
     height: 100%;
   }
 
