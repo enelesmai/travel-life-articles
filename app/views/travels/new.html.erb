@@ -1,12 +1,6 @@
 <h1 class="header-color">Create a new traveling article</h1>
 
-<% if @travel.errors.any? %>
-  <div class="alert alert-warning text-center" role="alert">
-    <% @travel.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-  </div>
-<% end %>
+<%= show_errors %>
 
 <%= form_for @travel, local:true, multipart: true do |f| %>
 
