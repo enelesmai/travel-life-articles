@@ -28,7 +28,7 @@ class TravelsController < ApplicationController
 
     @comment = Comment.new
     @comment.travel_id = @travel.id
-  end 
+  end
 
   def travel_params
     params.require(:travel).permit(:title, :text, :image)

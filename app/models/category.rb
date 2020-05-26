@@ -11,5 +11,4 @@ class Category < ApplicationRecord
   def self.list_of_categories
     Category.all.order(:priority).includes(:travels).take(3)
   end
-
 end

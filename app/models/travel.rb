@@ -31,5 +31,4 @@ class Travel < ApplicationRecord
   def self.featured_traveling_article
     Travel.all.includes(:votes).includes([:image_attachment]).max_by { |t| t.votes.length }
   end
-
 end
