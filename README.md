@@ -27,11 +27,11 @@ then run the server on https://localhost:3000
 
 **Main Page**
 
-![image](https://user-images.githubusercontent.com/5160907/82708292-7fdaa980-9c43-11ea-995f-e434699c0085.png)
+![image](https://user-images.githubusercontent.com/5160907/82912846-29b38200-9f33-11ea-9fcc-39443fd5cce6.png)
 
 
 **Categories View**
-![image](https://user-images.githubusercontent.com/5160907/82706757-1c02b180-9c40-11ea-8628-cec23b25a928.png)
+![image](https://user-images.githubusercontent.com/5160907/82913009-61222e80-9f33-11ea-8ccf-65c537505aed.png)
 
 ## Live Demo
 You can see the here the [live preview](https://immense-thicket-35902.herokuapp.com/)
