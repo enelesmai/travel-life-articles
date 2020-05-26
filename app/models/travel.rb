@@ -27,4 +27,9 @@ class Travel < ApplicationRecord
   def default_image
     'https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png'
   end
+
+  def self.featured_traveling_article
+    Travel.all.includes(:votes).includes([:image_attachment]).max_by { |t| t.votes.length }
+  end
+
 end
