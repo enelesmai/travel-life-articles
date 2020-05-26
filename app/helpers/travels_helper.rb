@@ -59,35 +59,51 @@ module TravelsHelper
     html.html_safe
   end
 
-  def show_articles(item)
+  def show_articles
     html = ''
-    unless item.travels.first.nil?
-      html += "<div class='featured-box'>"
-      # rubocop:disable Lint/UselessAssignment
-      if item.travels.order(created_at: :desc).first.image.attached?
-        html += link_to travel_path(item.travels.first.id) do
-          image_tag(item.travels.order(created_at: :desc).first.image, options = { class: 'article-image-full' })
-        end
-      end
 
-      unless item.travels.order(created_at: :desc).first.image.attached?
-        html += link_to travel_path(item.travels.first.id) do
-          image_tag(item.travels.order(created_at: :desc).first.default_image,
-                    options = { class: 'article-image-full' })
+    @list_of_categories.each do |item|
+      unless item.travels.first.nil?
+        html += "<div class='featured-box'>"
+        # rubocop:disable Lint/UselessAssignment
+        if item.travels.order(created_at: :desc).first.image.attached?
+          html += link_to travel_path(item.travels.first.id) do
+            image_tag(item.travels.order(created_at: :desc).first.image, options = { class: 'article-image-full' })
+          end
         end
+
+        unless item.travels.order(created_at: :desc).first.image.attached?
+          html += link_to travel_path(item.travels.first.id) do
+            image_tag(item.travels.order(created_at: :desc).first.default_image,
+                      options = { class: 'article-image-full' })
+          end
+        end
+        # rubocop:enable Lint/UselessAssignment
+        html += "<div class='d-flex flex-column align-items-start top'>"
+        html += '<b>'
+        html += link_to item.name, category_path(item.id), class: 'link-category'
+        html += '</b>'
+        html += '</div>'
+        html += "<div class='d-flex flex-column align-items-start resume'><span>"
+        html += link_to item.travels.order(created_at: :desc).first.title,
+                        travel_path(item.travels.order(created_at: :desc).first.id), class: 'link'
+        html += '</span></div>'
+        html += '</div>'
       end
-      # rubocop:enable Lint/UselessAssignment
-      html += "<div class='d-flex flex-column align-items-start top'>"
-      html += '<b>'
-      html += link_to item.name, category_path(item.id), class: 'link-category'
-      html += '</b>'
-      html += '</div>'
-      html += "<div class='d-flex flex-column align-items-start resume'><span>"
-      html += link_to item.travels.order(created_at: :desc).first.title,
-                      travel_path(item.travels.order(created_at: :desc).first.id), class: 'link'
-      html += '</span></div>'
-      html += '</div>'
+    end
+
+    html.html_safe
+  end
+
+  def category_options
+    html = ''
+    @categories.each do |category|
+      html += check_box_tag "category_ids[]", category.id, false, class: 'form-check-input', id:"checkbox#{category.id}"
+      html += "<span>"
+      html += label_tag category.name, category.name, class: 'form-check-label'
+      html += "</span><br>"
     end
     html.html_safe
   end
+
 end

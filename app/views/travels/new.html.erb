@@ -18,13 +18,7 @@
 
   <h5>Select categories</h5>
   <div class='form-group form-check'>
-  <% @categories.each do |category| %>
-    <%= check_box_tag "category_ids[]", category.id, false, class: 'form-check-input', id:"checkbox#{category.id}" %>
-    <span>
-      <%= label_tag category.name, category.name, class: 'form-check-label' %>
-    </span>
-    <br>
-  <% end %>
+    <%= category_options %>
   </div>
   <br>
 
