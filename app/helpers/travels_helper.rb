@@ -52,7 +52,7 @@ module TravelsHelper
       end
       # rubocop:enable Lint/UselessAssignment
       html += "<div class='content-feat position-relative font-weight-bold p-2'>
-                <h3 class='header-color'>#{@featured_traveling_article.title}</h3>
+                <h3 class='header-color header-feature'>#{@featured_traveling_article.title}</h3>
                 <span>#{@featured_traveling_article.text.truncate(80)}</span>
             </div>"
     end
