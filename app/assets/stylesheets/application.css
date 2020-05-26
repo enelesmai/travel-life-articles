@@ -90,6 +90,8 @@
 
  .content-feat {
    bottom: 80px;
+   width: 100%;
+   background-color: rgba(78, 68, 63,.6);
  }
 
  a.fill-content {
