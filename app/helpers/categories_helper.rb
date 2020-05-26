@@ -15,7 +15,7 @@ module CategoriesHelper
   def show_link_to_vote(item)
     html = ''
     unless current_user.nil?
-      html += link_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id, category_id: @category.id),
+      html += link_to 'Vote!', votes_path(user_id: current_user, travel_id: item.id),
                       method: :post, class: 'fa fa-thumbs-up header-color vote'
     end
     html.html_safe

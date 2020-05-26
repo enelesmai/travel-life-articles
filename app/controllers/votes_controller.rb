@@ -2,13 +2,17 @@ class VotesController < ApplicationController
   def new; end
 
   def create
-    @vote = Vote.new(travel_id: params[:travel_id],
-                     user_id: params[:user_id])
+    @vote = Vote.new(vote_params)
 
     if @vote.save
-      redirect_to category_path(params[:category_id]), notice: "Successfully voted\n"
+      flash.notice = "Successfully voted\n"
     else
-      redirect_to category_path(params[:category_id]), alert: "You already voted\n"
+      flash.alert = "You already voted\n"
     end
+    redirect_back fallback_location: '/', allow_other_host: false
+  end
+
+  def vote_params
+    params.permit(:travel_id, :user_id)
   end
 end
