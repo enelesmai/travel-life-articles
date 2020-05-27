@@ -1,0 +1,14 @@
+<h1 class="header-color"><%= @travel.title %></h1>
+<h2>Author: <%= @travel.author.name %></h2>
+
+
+<%= show_image %>    
+
+<p>
+    <%= @travel.text %>
+</p>
+
+<%= show_comments %>
+
+<hr class="separator">
+<%= render partial: 'comments/form' %>

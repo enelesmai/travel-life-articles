@@ -1,0 +1,363 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ 
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+    background-color: #4E433D;  
+    color: #4D433D;  
+    font-family: 'Cabin', 'Roboto', sans-serif;
+ }
+
+ a.vote:hover {
+  text-decoration:none;
+  color: #f76108;
+  font-weight: bolder;
+ }
+
+ .link-category, .link-category:hover {
+   color: #fff;
+   font-weight: bold;
+   font-size: 20px;
+   border-bottom: 2px solid yellow;
+   text-decoration: none;
+ }
+
+  .link, .link:hover{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+ }
+
+ .article-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+ }
+
+ .article-image-full {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.header-feature {
+  text-shadow: 1px 1px rgba(78,67,61,.8);
+}
+
+ .header-color {
+     color: #f76108;
+ }
+
+ .user-actions {
+     box-sizing: border-box;
+     position: relative;
+     right: 0;
+ }
+
+ .center-space {
+     width: 56%;
+ }
+
+ .side-space {
+    width: 22%;
+ }
+
+ .separator {
+    border-top: 1px solid #f76108;
+ }
+
+ .fill-content {
+  width: 100%;
+  height: auto;
+ }
+
+ .img-feat {
+  width: 100%;
+  background-size: cover;
+ }
+
+ .content-feat {
+   bottom: 80px;
+   width: 100%;
+ }
+
+ .transbox {
+  margin: 0;
+  background: linear-gradient(rgba(78,67,61,.8),rgba(0,0,0,.8));
+  border: 0px solid black;
+ }
+
+ a.fill-content {
+   color: #fff;
+   text-decoration: none;
+ }
+
+ nav ul li a {
+    color: #4D433D;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0 10px;
+    position: relative;
+    bottom: -10px;
+}
+
+nav a, span.brand-name {
+    color: #4D433D;
+    text-decoration: none;
+    background-color: transparent;
+    /*margin: 0 10px;*/
+}
+
+nav ul li a:hover, nav a:hover, span.brand-name:hover {
+    color: #f76108;
+    text-decoration: none;
+}
+
+ nav {
+    background: #fff;  
+    padding: 7px 0; 
+    box-sizing: border-box;
+    border-bottom: 10px solid #f76108;
+ }
+
+ .search-icon {
+     margin: 0 20px;
+     bottom: 5px;
+     position: relative;
+     cursor: pointer;
+ }
+
+ .brand-name {
+    font-size: 24px;
+    padding-left: 20px;
+ }
+
+ .btn-primary {
+    color: #fff;
+    background-color: #f76108;
+    border-color: #f76108;
+ }
+
+ .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #f76108;
+    border-color: #f76108;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #f76108;
+    border-color: #f76108;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #f76108;
+    border-color: #f76108;
+    box-shadow: 0 0 0 .2rem rgba(247,97,8,.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(247,97,8,.5);
+}
+
+ /* Sign In*/
+ .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  
+/* Footer */
+footer{
+    height: 50px;
+    color: white;
+    background-color: rgb(78, 68, 63);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 0 20px;
+    top: 6px;
+    position: relative;
+}
+
+.footer-logo:hover {
+    color: #f76108;
+    text-decoration: none;
+}
+
+.copyright {
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.copyright > span:not(:nth-child(3)) {
+    color: #f76108;
+}
+
+.footer-icons {
+    color: #fff;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.connect {
+    position: relative;
+    bottom: 16px;
+}
+
+.footer-links > label {
+    background-color: #f76108; 
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-links > label > i {
+    top: 7px;
+    left: 8px;
+    cursor: pointer;
+    position: absolute;
+}
+
+/*index*/
+  .cover {
+    margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+  }
+  
+  header {
+      position: relative;
+      bottom: 0;
+        height: auto;
+    line-height: 54px;
+    padding: 0 10px;
+    width: 100%;
+  }
+  
+  header:hover {
+    cursor: pointer;
+  }
+  
+  h1 {
+    font-size: 54px;
+  }
+  
+  h2 {
+    z-index: 10;
+    font-size: 36px;
+  }
+  
+  .see-more {
+    font-size: 24px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    height: 40px;
+  }
+  
+  .center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  
+  .feautures {
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    max-width: 1440px;
+    box-sizing: border-box;
+    top: -45px;
+    position: relative;
+  }
+  
+  .featured-box {
+    width: 370px;
+    height: 100%;
+  }
+
+  .resume {
+      position: relative;
+      top: -54px;
+      padding-left: 7px;
+  }
+
+  .top {
+    position: relative;
+    top: -210px;
+    padding-left: 7px;
+}
+
+h1, h2, h5 {
+  padding-top:20px;
+}
+
+.col-no-padding {
+  padding: 0 !important;
+}
+
+.col-only-left-padding {
+  padding: 0 0 0 15px !important;
+}
